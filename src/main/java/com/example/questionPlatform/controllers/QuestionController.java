@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("question")
+@RequestMapping("questions")
 public class QuestionController {
 
     @Operation(summary = "add question")
@@ -24,7 +24,7 @@ public class QuestionController {
                     description = "Question is not valid",
                     content = @Content)
     })
-    @PostMapping("addQuestion")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void addQuestion(@Valid @RequestBody QuestionDTO questionDTO) {
         //adding question
@@ -45,9 +45,9 @@ public class QuestionController {
                     description = "Question is not valid",
                     content = @Content)
     })
-    @PutMapping("updateQuestion")
+    @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updateQuestion(@Valid @RequestBody QuestionDTO questionDTO) {
+    public void updateQuestion(@Valid @RequestBody QuestionDTO questionDTO, @PathVariable long id) {
         //updating question
     }
 
@@ -60,7 +60,7 @@ public class QuestionController {
                     description = "Question not found",
                     content = @Content)
     })
-    @DeleteMapping("deleteQuestion/{id}")
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable long id)
     {

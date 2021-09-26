@@ -18,7 +18,11 @@ public class QuestionController {
     @Operation(summary = "add question")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "The question was successfully added",
-                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = QuestionDTO.class)) })
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = QuestionDTO.class)) }),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Question is not valid",
+                    content = @Content)
     })
     @PostMapping("addQuestion")
     @ResponseStatus(HttpStatus.CREATED)
@@ -35,6 +39,10 @@ public class QuestionController {
             @ApiResponse(
                     responseCode = "404",
                     description = "Question not found",
+                    content = @Content),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Question is not valid",
                     content = @Content)
     })
     @PutMapping("updateQuestion")

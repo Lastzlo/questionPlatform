@@ -5,15 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotBlank;
-
+import javax.validation.constraints.Null;
 
 @Component
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TopicDTO {
+public class ResultDTO {
 
-    @NotBlank
-    private String name;
+    private long id;
+    private QuestionDTO question;
+    private AnswerDTO answer;
 }

@@ -77,8 +77,9 @@ public class QuestionController {
 
     @Operation(summary = "Add question")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "The question was successfully added",
-                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = QuestionDTO.class)) }),
+            @ApiResponse(
+                    responseCode = "201", description = "The question was successfully added",
+                    content = @Content),
             @ApiResponse(
                     responseCode = "400",
                     description = "Question is not valid",
@@ -90,12 +91,12 @@ public class QuestionController {
         //adding question
     }
 
-    @Operation(summary = "update question")
+    @Operation(summary = "Update question")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
                     description = "The question was successfully updated",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = QuestionDTO.class))),
+                    content = @Content),
             @ApiResponse(
                     responseCode = "404",
                     description = "Question not found",
@@ -111,7 +112,7 @@ public class QuestionController {
         //updating question
     }
 
-    @Operation(summary = "delete question")
+    @Operation(summary = "Delete question")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "The question was successfully deleted",
@@ -122,7 +123,7 @@ public class QuestionController {
     })
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable long id)
+    public void deleteQuestion(@PathVariable long id)
     {
         //deleting question
     }

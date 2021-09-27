@@ -24,7 +24,7 @@ public class ResultController {
                             schema = @Schema(implementation = ResultDTO.class))}),
             @ApiResponse(
                     responseCode = "400",
-                    description = "Form is not valid",
+                    description = "Result is not valid",
                     content = @Content)
     })
     @PostMapping()

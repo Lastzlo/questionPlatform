@@ -4,6 +4,7 @@ package com.example.questionPlatform.controllers;
 import com.example.questionPlatform.models.FormDTO;
 import com.example.questionPlatform.models.ResultDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -40,7 +41,8 @@ public class FormController {
     @Operation(summary = "Returns all forms")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "All forms were returned",
-                    content = @Content(mediaType = "application/json")),
+                    content = @Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = FormDTO.class)))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
             })
     @GetMapping()
@@ -101,7 +103,8 @@ public class FormController {
     @Operation(summary = "Returns the results of passing the form")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "All results were returned",
-                    content = @Content(mediaType = "application/json")),
+                    content = @Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = ResultDTO.class)))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
     })
     @GetMapping("{id}/results")
@@ -114,7 +117,8 @@ public class FormController {
     @Operation(summary = "Returns the results of passing the form by the given user")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Results were returned",
-                    content = @Content(mediaType = "application/json")),
+                    content = @Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = ResultDTO.class)))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
     })
     @GetMapping("{id}/results/users/{user_id}")

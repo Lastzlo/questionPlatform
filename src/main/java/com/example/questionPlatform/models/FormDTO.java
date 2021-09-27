@@ -5,20 +5,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Component
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuestionDTO {
+public class FormDTO {
 
     private long id;
+    private String tittle;
+    private UserDTO owner;
+    private List<QuestionDTO> questions;
 
-    @NotBlank
-    private String description;
-    private TopicDTO topic;
-    private long FormId;
-    List<AnswerDTO> possibleAnswers;
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

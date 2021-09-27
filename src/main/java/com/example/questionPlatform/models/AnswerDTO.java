@@ -1,22 +1,17 @@
 package com.example.questionPlatform.models;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AnswerDTO {
+
     private long AnswerId;
     private String answer;
-
-    public long getAnswerId() {
-        return AnswerId;
-    }
-
-    public void setAnswerId(long answerId) {
-        AnswerId = answerId;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
 }

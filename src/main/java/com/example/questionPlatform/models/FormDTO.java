@@ -1,11 +1,22 @@
 package com.example.questionPlatform.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class FormDTO {
+
     private long id;
-    private String title;
-    private long userId;
-
-
+    private String tittle;
+    private UserDTO owner;
+    private List<QuestionDTO> questions;
 
     public long getId() {
         return id;
@@ -14,21 +25,4 @@ public class FormDTO {
     public void setId(long id) {
         this.id = id;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
 }

@@ -6,14 +6,17 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Null;
+import java.util.List;
 
 @Component
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResultDTO {
+public class UserDTO {
 
-    private long id;
-    private QuestionDTO question;
-    private AnswerDTO answer;
+    @Null
+    private Long id;
+    private String name;
+    private String password;
+    private List<ResultDTO> results;
 }

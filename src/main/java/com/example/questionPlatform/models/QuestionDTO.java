@@ -1,48 +1,24 @@
 package com.example.questionPlatform.models;
 
-import javax.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotBlank;
+import java.util.List;
+
+@Component
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class QuestionDTO {
 
     private long id;
 
     @NotBlank
     private String description;
-
     private TopicDTO topic;
-
     private long FormId;
-
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getFormId() {
-        return FormId;
-    }
-
-    public void setFormId(long formId) {
-        FormId = formId;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public TopicDTO getTopic() {
-        return topic;
-    }
-
-    public void setTopic(TopicDTO topic) {
-        this.topic = topic;
-    }
+    List<AnswerDTO> possibleAnswers;
 }

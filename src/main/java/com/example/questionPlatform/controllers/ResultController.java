@@ -11,43 +11,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("results")
 public class ResultController {
 
-//    @Operation(summary = "Create new result")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "201", description = "The result was successfully added",
-//                    content = {@Content(
-//                            mediaType = "application/json",
-//                            schema = @Schema(implementation = ResultDTO.class))}),
-//            @ApiResponse(
-//                    responseCode = "400",
-//                    description = "Result is not valid",
-//                    content = @Content)
-//    })
-//    @PostMapping()
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public void createResult(@Valid @RequestBody ResultDTO resultDTO) {
-//        //adding result
-//    }
-//
-//
-//    @Operation(summary = "Delete chosen result")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200",
-//                    description = "The result was successfully deleted",
-//                    content = @Content),
-//            @ApiResponse(responseCode = "404",
-//                    description = "Result not found",
-//                    content = @Content)
-//    })
-//    @DeleteMapping("{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public void deleteResult(@PathVariable long id) {
-//        //deleting result
-//    }
+
     @Operation(summary = "Get all user's result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
@@ -59,8 +30,9 @@ public class ResultController {
     })
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public void getAllUserResult(){
+    public List<ResultDTO> getAllUserResult(){
         //Some realization
+        return new ArrayList<ResultDTO>();
     }
 
 
@@ -78,9 +50,11 @@ public class ResultController {
     })
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void getUserResultById(@PathVariable String id){
-        //some realization
+    public List<ResultDTO> getUserResultById(@PathVariable String id){
+        return new ArrayList<ResultDTO>();
     }
+
+
     @Operation(summary = "Create new result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201",
@@ -92,6 +66,8 @@ public class ResultController {
     public void createResult(@Valid ResultDTO resultDTO){
         //Some realization
     }
+
+
     @Operation(summary = "fully update result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
@@ -107,6 +83,8 @@ public class ResultController {
     public void updateResult(@PathVariable String id, @Valid ResultDTO resultDTO){
     //Some realization
     }
+
+
     @Operation(summary = "update part of result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
@@ -122,6 +100,8 @@ public class ResultController {
     public void updatePartOfResult(@PathVariable String id, @Valid ResultDTO resultDTO){
         //Some realization
     }
+
+
     @Operation(summary = "delete result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",

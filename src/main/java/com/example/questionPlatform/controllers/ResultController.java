@@ -1,8 +1,8 @@
 package com.example.questionPlatform.controllers;
 
-import com.example.questionPlatform.models.FormDTO;
 import com.example.questionPlatform.models.ResultDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -40,7 +40,7 @@ public class ResultController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
             description = "The result of user got",
-            content = @Content),
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResultDTO.class))),
             @ApiResponse(responseCode = "404",
             description = "The result of user not found",
             content = @Content),
@@ -50,8 +50,8 @@ public class ResultController {
     })
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List<ResultDTO> getUserResultById(@PathVariable String id){
-        return new ArrayList<ResultDTO>();
+    public ResultDTO getUserResultById(@PathVariable String id){
+        return new ResultDTO();
     }
     
     

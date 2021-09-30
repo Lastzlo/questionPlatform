@@ -1,7 +1,7 @@
 package com.example.questionPlatform.controllers;
 
 import com.example.questionPlatform.models.AnswerDTO;
-import com.example.questionPlatform.models.UserDTO;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -18,6 +18,7 @@ import java.util.List;
 @RequestMapping("answers")
 public class AnswerController {
 
+    @Hidden
     @Operation(summary = "Returns all answers by question id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "302", description = "All answers successfully found",
@@ -35,6 +36,7 @@ public class AnswerController {
         return List.of();
     }
 
+    @Hidden
     @Operation(summary = "Add answer")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "New answer created successfully",
@@ -50,6 +52,7 @@ public class AnswerController {
         //Some realization
     }
 
+    @Hidden
     @Operation(summary = "Update answer")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Answer successfully updated",
@@ -69,6 +72,7 @@ public class AnswerController {
         //Some realization
     }
 
+    @Hidden
     @Operation(summary = "Delete answer")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Answer successfully deleted",

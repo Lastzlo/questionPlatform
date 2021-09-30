@@ -44,7 +44,7 @@ public class FormController {
                     content = @Content(mediaType = "application/json",
                             array = @ArraySchema(schema = @Schema(implementation = FormDTO.class)))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
-            })
+    })
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<FormDTO> getAllForms() {

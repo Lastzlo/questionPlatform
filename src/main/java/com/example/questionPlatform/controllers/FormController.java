@@ -22,10 +22,10 @@ public class FormController {
 
     @Operation(summary = "Create new form")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "New form created successfully",
-                    content = {@Content(
-                                    mediaType = "application/json",
-                                    schema = @Schema(implementation = FormDTO.class))}),
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "New form created successfully",
+                    content = @Content),
             @ApiResponse(
                     responseCode = "400",
                     description = "Form is not valid",
@@ -68,7 +68,7 @@ public class FormController {
             @ApiResponse(
                     responseCode = "200",
                     description = "The form successfully updated",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = FormDTO.class))),
+                    content = @Content),
             @ApiResponse(
                     responseCode = "404",
                     description = "Form not found",

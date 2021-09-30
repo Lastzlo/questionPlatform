@@ -18,4 +18,5 @@ public class ResultDTO {
     private FormDTO form;
     private UserDTO respondent;
     private List<QuestionAnswerDTO> questionAnswerList;
+
 }

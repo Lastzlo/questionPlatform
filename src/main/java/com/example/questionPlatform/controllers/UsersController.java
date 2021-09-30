@@ -18,10 +18,10 @@ public class UsersController {
 
     @Operation(summary = "Create new user")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "New user created successfully",
-            content = {@Content(
-                    mediaType = "application/json",
-                    schema = @Schema(implementation = UserDTO.class))}),
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "New user created successfully",
+                    content = @Content),
         @ApiResponse(
                 responseCode = "400",
                 description = "User is not valid",
@@ -35,10 +35,12 @@ public class UsersController {
 
     @Operation(summary = "Returns one user by id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "302", description = "The user successfully found",
+            @ApiResponse(
+                    responseCode = "302",
+                    description = "The user successfully found",
                     content = {@Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = UserDTO.class))}),
+                            schema = @Schema(implementation = UserGetOneDTO.class))}),
             @ApiResponse(
                     responseCode = "400",
                     description = "Invalid id supplied",
@@ -58,10 +60,10 @@ public class UsersController {
 
     @Operation(summary = "Updates user by id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "User successfully updated",
-                    content = {@Content(
-                            mediaType = "application/json",
-                            schema = @Schema(implementation = UserDTO.class))}),
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "User successfully updated",
+                    content = @Content),
             @ApiResponse(
                     responseCode = "400",
                     description = "Invalid id supplied",
@@ -75,10 +77,10 @@ public class UsersController {
 
     @Operation(summary = "Deletes user by id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "User successfully deleted",
-                    content = {@Content(
-                            mediaType = "application/json",
-                            schema = @Schema(implementation = UserDTO.class))}),
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "User successfully deleted",
+                    content = @Content),
             @ApiResponse(
                     responseCode = "400",
                     description = "Invalid id supplied",

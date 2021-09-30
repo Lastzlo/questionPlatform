@@ -14,8 +14,10 @@ import java.util.List;
 @NoArgsConstructor
 public class ResultDTO {
 
+
     private long id;
     private FormDTO form;
     private UserDTO respondent;
     private List<QuestionAnswerDTO> questionAnswerList;
+
 }

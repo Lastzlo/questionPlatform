@@ -22,10 +22,10 @@ public class FormController {
 
     @Operation(summary = "Create new form")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "New form created successfully",
-                    content = {@Content(
-                                    mediaType = "application/json",
-                                    schema = @Schema(implementation = FormDTO.class))}),
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "New form created successfully",
+                    content = @Content),
             @ApiResponse(
                     responseCode = "400",
                     description = "Form is not valid",
@@ -44,7 +44,7 @@ public class FormController {
                     content = @Content(mediaType = "application/json",
                             array = @ArraySchema(schema = @Schema(implementation = FormDTO.class)))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
-            })
+    })
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<FormDTO> getAllForms() {
@@ -55,7 +55,7 @@ public class FormController {
     @Operation(summary = "Returns the form by Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The form found",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResultDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = FormDTO.class))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
     })
     @GetMapping("{id}")
@@ -68,7 +68,7 @@ public class FormController {
             @ApiResponse(
                     responseCode = "200",
                     description = "The form successfully updated",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = FormDTO.class))),
+                    content = @Content),
             @ApiResponse(
                     responseCode = "404",
                     description = "Form not found",
@@ -100,17 +100,19 @@ public class FormController {
     }
 
 
-    @Operation(summary = "Returns the result of passing the form")
+    @Operation(summary = "Returns all results of passing the form")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "All results were returned",
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "All results were returned",
                     content = @Content(mediaType = "application/json",
                             array = @ArraySchema(schema = @Schema(implementation = ResultDTO.class)))),
-            @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
+            @ApiResponse(responseCode = "404", description = "Not found results", content = @Content)
     })
     @GetMapping("{id}/results")
     @ResponseStatus(HttpStatus.OK)
-    public ResultDTO getFormResults(@PathVariable String id) {
-        return new ResultDTO();
+    public List<ResultDTO> getFormResults(@PathVariable String id) {
+        return new ArrayList<>();
     }
 
 }

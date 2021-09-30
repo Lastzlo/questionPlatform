@@ -72,7 +72,7 @@ public class ResultController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "The result was successfully updated",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResultDTO.class))),
+                    content = @Content),
             @ApiResponse(responseCode = "404",
                     description = "The result not found",
                     content = @Content)
@@ -89,7 +89,7 @@ public class ResultController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "The result was successfully updated",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResultDTO.class))),
+                    content = @Content),
             @ApiResponse(responseCode = "404",
                     description = "The result not found",
                     content = @Content)

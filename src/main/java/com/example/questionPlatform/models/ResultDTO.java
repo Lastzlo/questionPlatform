@@ -17,4 +17,5 @@ public class ResultDTO {
     private long respondentId;
     private long fondId;
     private AnswerDTO[] answers;
+
 }

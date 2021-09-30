@@ -100,17 +100,19 @@ public class FormController {
     }
 
 
-    @Operation(summary = "Returns the result of passing the form")
+    @Operation(summary = "Returns all results of passing the form")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "All results were returned",
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "All results were returned",
                     content = @Content(mediaType = "application/json",
                             array = @ArraySchema(schema = @Schema(implementation = ResultDTO.class)))),
-            @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
+            @ApiResponse(responseCode = "404", description = "Not found results", content = @Content)
     })
     @GetMapping("{id}/results")
     @ResponseStatus(HttpStatus.OK)
-    public ResultDTO getFormResults(@PathVariable String id) {
-        return new ResultDTO();
+    public List<ResultDTO> getFormResults(@PathVariable String id) {
+        return new ArrayList<>();
     }
 
 }

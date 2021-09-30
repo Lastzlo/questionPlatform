@@ -55,7 +55,7 @@ public class FormController {
     @Operation(summary = "Returns the form by Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The form found",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResultDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = FormDTO.class))),
             @ApiResponse(responseCode = "404", description = "Not found", content = @Content)
     })
     @GetMapping("{id}")

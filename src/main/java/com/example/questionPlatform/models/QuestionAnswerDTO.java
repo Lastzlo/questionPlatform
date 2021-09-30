@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class QuestionAnswerDTO {
     private long id;
-    private ResultDTO result;
     private QuestionDTO question;
     private AnswerDTO answer;
 }

@@ -21,8 +21,9 @@ public class ResultController {
     @Operation(summary = "Get all user's result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
-            description = "All results of user got ",
-            content = @Content),
+                    description = "All results of user got",
+                    content = @Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = ResultDTO.class)))),
             @ApiResponse(responseCode = "401",
                     description = "Unauthorized user",
                     content = @Content)

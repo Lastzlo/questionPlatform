@@ -13,7 +13,8 @@ import javax.validation.constraints.Null;
 @NoArgsConstructor
 public class ResultDTO {
 
-    private long id;
-    private QuestionDTO question;
-    private AnswerDTO answer;
+    private long resutId;
+    private long respondentId;
+    private long fondId;
+    private AnswerDTO[] answers;
 }

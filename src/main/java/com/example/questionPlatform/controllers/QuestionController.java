@@ -2,6 +2,7 @@ package com.example.questionPlatform.controllers;
 
 import com.example.questionPlatform.models.QuestionDTO;
 import com.example.questionPlatform.models.TopicDTO;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -19,6 +20,7 @@ import java.util.List;
 @RequestMapping("questions")
 public class QuestionController {
 
+    @Hidden
     @Operation(summary = "Get all questions")
     @ApiResponses(value = {
             @ApiResponse(
@@ -47,6 +49,7 @@ public class QuestionController {
         return list;
     }
 
+    @Hidden
     @Operation(summary = "Get question")
     @ApiResponses(value = {
             @ApiResponse(
@@ -75,6 +78,7 @@ public class QuestionController {
         return questionDTO;
     }
 
+    @Hidden
     @Operation(summary = "Add question")
     @ApiResponses(value = {
             @ApiResponse(
@@ -91,6 +95,7 @@ public class QuestionController {
         //adding question
     }
 
+    @Hidden
     @Operation(summary = "Update question")
     @ApiResponses(value = {
             @ApiResponse(
@@ -112,6 +117,7 @@ public class QuestionController {
         //updating question
     }
 
+    @Hidden
     @Operation(summary = "Delete question")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",

@@ -68,7 +68,7 @@ public class ResultController {
     }
     
     
-    @Operation(summary = "fully update result")
+    @Operation(summary = "Full update result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "The result was successfully updated",
@@ -85,7 +85,7 @@ public class ResultController {
     }
     
     
-    @Operation(summary = "update part of result")
+    @Operation(summary = "Update part of result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "The result was successfully updated",
@@ -102,7 +102,7 @@ public class ResultController {
     }
     
     
-    @Operation(summary = "delete result")
+    @Operation(summary = "Delete result")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "The result was successfully deleted",

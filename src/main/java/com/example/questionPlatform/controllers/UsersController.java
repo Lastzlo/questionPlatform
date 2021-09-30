@@ -35,10 +35,12 @@ public class UsersController {
 
     @Operation(summary = "Returns one user by id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "302", description = "The user successfully found",
+            @ApiResponse(
+                    responseCode = "302",
+                    description = "The user successfully found",
                     content = {@Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = UserDTO.class))}),
+                            schema = @Schema(implementation = UserGetOneDTO.class))}),
             @ApiResponse(
                     responseCode = "400",
                     description = "Invalid id supplied",
